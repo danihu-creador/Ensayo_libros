@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        table { border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #999; padding: 6px 12px; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+    <h1>Biblioteca</h1>
+
+    <table>
+        <thead>
+            <tr><th>ID</th><th>Título</th><th>Autor</th><th>Acción</th></tr>
+        </thead>
+        <tbody>
+            <tr th:each="p : ${libros}">
+                <td th:text="${p.id}"></td>
+                <td th:text="${p.titulo}"></td>
+                <td th:text="${p.autor}"></td>
+                <td><a th:href="@{/libros/borrar/{id}(id=${p.id})}">Borrar</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Añadir</h2>
+    <!-- Los atributos name coinciden con los campos de la clase Libro -->
+    <form th:action="@{/libros/guardar}" method="post">
+        <input type="text" name="titulo" placeholder="Título" required>
+        <input type="text" name="autor" placeholder="Autor" step="0.01" required>
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

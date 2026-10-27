@@ -1,0 +1,20 @@
+PROYECTO Biblioteca - Spring MVC + Hibernate
+=========================================
+Scripts (doble clic):
+  probar.bat       Ejecuta las pruebas y dice cuáles pasan o fallan
+                   (cada prueba lleva el número de su TODO).
+  arrancar.bat     Arranca la aplicación. Abre http://localhost:8080/libros
+                   Para pararla: Ctrl + C en la ventana negra.
+  empaquetar.bat   Genera target\app.jar (la aplicación lista para desplegar).
+  ejecutar_jar.bat Ejecuta target\app.jar.
+
+Archivos que se editan (carpeta src\main):
+  java\es\hazerta\app\Libro.java
+  java\es\hazerta\app\LibroRepository.java
+  java\es\hazerta\app\LibroController.java
+  resources\templates\lista.html
+  y LEEME_ALUMNO.txt (en esta carpeta)
+
+Busca la palabra TODO para encontrar lo que hay que completar.
+La chuleta de los apuntes tiene el código de cada TODO (con otros nombres).
+No toques la carpeta src\test ni pom.xml.

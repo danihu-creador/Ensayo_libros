@@ -1,0 +1,29 @@
+LEEME DEL ALUMNO  (TODO 9)
+==========================
+Rellena este archivo con tus palabras. Dos o tres líneas por apartado bastan.
+
+Nombre y apellidos: Daniel Herráez Urango
+
+1. ¿Qué hace la aplicación?
+   Es una aplicación web que muestra una lista/tabla de libros almacenados en una base
+   de datos, permitiendo dar de alta nuevos libros mediante un formulario y eliminar existentes.
+
+2. ¿Cómo se prueba y cómo se arranca? (nombre de los scripts o comandos)
+   - Probar: ejecutando 'probar.bat' (lanza 'mvn test').
+   - Arrancar: ejecutando 'arrancar.bat' (lanza 'mvn spring-boot:run') y accediendo a http://localhost:8080/libros en el navegador.
+
+3. ¿Para qué sirve cada clase?
+   - Libro: Es la clase de entidad/modelo (@Entity). Representa la estructura de la tabla y cada objeto corresponde a una fila en la base de datos.
+   - LibroRepository: Es la interfaz de repositorio que extiende JpaRepository. Proporciona operaciones CRUD (findAll, save, deleteById) sin escribir sentencias SQL.
+   - LibroController: Es el controlador de Spring MVC (@Controller) que atiende las peticiones HTTP del navegador, interactúa con el repositorio y enlaza los datos con la vista.
+   - lista.html: Es la plantilla de vista (Thymeleaf) encargada de renderizar la interfaz web, la tabla de libros y el formulario para el usuario.
+
+4. ¿Qué es Hibernate y qué hace en esta aplicación?
+   Hibernate es el framework ORM (Object-Relational Mapping) que implementa la especificación JPA en Spring Boot. Se encarga de mapear las entidades Java a tablas relacionales de la base de datos y ejecutar automáticamente las consultas SQL necesarias.
+
+5. TODO 10: ejecuta empaquetar.bat y comprueba que existe target\app.jar.
+   ¿Cómo se ejecutaría la aplicación en otro ordenador con Java?
+   Se ejecuta desde la consola con el comando:
+   java -jar app.jar
+   (o ejecutando el script 'ejecutar_jar.bat').
+
